@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Craft Manpower - Connecting Global Talent</title>
+    <!-- Load Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font for a professional look -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* Light background */
+            scroll-behavior: smooth;
+        }
+        /* Custom styles for Hero Section background image */
+        .hero-background {
+            background-image: url('https://placehold.co/1920x800/1e3a8a/ffffff?text=Global+Workforce+Solution');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Ensure primary button has consistent style */
+        .btn-primary {
+            @apply inline-block px-8 py-3 rounded-full text-white font-bold transition duration-300 transform hover:scale-105 shadow-xl;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Header (Top Bar) -->
+    <header class="bg-white shadow-lg fixed top-0 left-0 w-full z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-4">
+            <!-- Logo -->
+             <img src="Globalcraftmanpower.png" alt="Global Craft Manpower Logo" class="h-10 w-auto">   
+            <a href="#home" class="text-2xl font-extrabold text-blue-900 tracking-tight">
+                Global<span class="text-teal-500">Craft</span>
+            </a>
+
+            <!-- Navigation Menu (Desktop) -->
+            <nav class="hidden lg:flex space-x-6 items-center">
+                <a href="#home" class="text-gray-600 hover:text-blue-700 transition duration-150">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-700 transition duration-150">About Us</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-700 transition duration-150">Services</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-700 transition duration-150">Contact</a>
+            </nav>
+
+            <!-- Quick Contact & Dual CTA (Desktop) -->
+            <div class="hidden lg:flex items-center space-x-4">
+                <!-- WhatsApp Icon Placeholder (Using SVG for simplicity) -->
+                <a href="https://wa.me/+919055080014" target="_blank" class="text-green-500 hover:text-green-700 transition duration-150" aria-label="WhatsApp Contact">
+                    <img src="whatsapp.png" alt="WhatsApp" class="h-7 w-7">
+                </a>
+                <!-- Phone Icon Placeholder -->
+                <a href="tel:+919055080014" class="text-blue-500 hover:text-blue-700 transition duration-150" aria-label="Call Us">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.2c.27-.27.35-.67.24-1.02C8.75 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/></svg>
+                </a>
+
+                <!-- Highlighted CTAs -->
+                </div>
+            
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="menu-button" class="lg:hidden p-2 text-gray-700 hover:text-blue-700 rounded-lg focus:outline-none" aria-label="Open Menu">
+                <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white shadow-xl">
+            <nav class="flex flex-col space-y-2 p-4 border-t">
+                <a href="#home" class="text-gray-600 hover:text-blue-700 py-2 border-b">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-700 py-2 border-b">About Us</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-700 py-2 border-b">Services</a>
+                <a href="#industries" class="text-gray-600 hover:text-blue-700 py-2 border-b">Industries</a>
+                <a href="#candidates" class="text-gray-600 hover:text-blue-700 py-2 border-b">Candidates</a>
+                <a href="#employers" class="text-gray-600 hover:text-blue-700 py-2 border-b">Employers</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-700 py-2 border-b">Contact</a>
+                <a href="#employers-cta" class="bg-blue-600 hover:bg-blue-700 btn-primary text-sm mt-4 text-center">Hire Manpower</a>
+                <a href="#candidates-cta" class="bg-teal-500 hover:bg-teal-600 btn-primary text-sm mt-2 text-center">Submit Resume</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-20">
+
+        <!-- 2. Hero Section (First Impression) -->
+        <section id="home" class="hero-background min-h-[60vh] md:min-h-[70vh] flex items-center justify-center text-center relative overflow-hidden">
+            <!-- Dark Overlay for Readability -->
+            <div class="absolute inset-0 bg-blue-900 opacity-80"></div>
+
+            <div class="relative z-10 p-6 max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+                    Connecting Global Talent with <span class="text-teal-400">Trusted Employers</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-200 mb-10">
+                    Specialized in overseas manpower recruitment, visa documentation, and large-scale workforce consultancy.
+                </p>
+
+                <!-- Dual Action Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a id="employers-cta" href="#services" class="bg-teal-500 hover:bg-teal-600 btn-primary text-lg">
+                        Hire Manpower <span class="ml-2">→</span>
+                    </a>
+                    <a id="candidates-cta" href="#jobs" class="bg-white text-blue-900 hover:bg-gray-100 btn-primary text-lg shadow-none border-2 border-teal-500">
+                        Apply Now <span class="ml-2">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. About Us (Trust Building) -->
+        <section id="about" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Text Content -->
+                    <div>
+                        <span class="text-sm font-semibold uppercase text-teal-600">Our Mission</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 mt-2">
+                            A Decade of Trust in Global Workforce Solutions
+                        </h2>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Global Craft Manpower is a professional, licensed recruitment agency dedicated to ethical and efficient overseas staffing. We help companies worldwide find skilled, verified, and reliable manpower across essential industries, driving productivity and building careers.
+                        </p>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-teal-500 mr-2">✓</span> **Verified Workforce:** Rigorous screening ensures quality.
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-teal-500 mr-2">✓</span> **Ethical Compliance:** Licensed operations adhering to international labor laws.
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-teal-500 mr-2">✓</span> **Fast Mobilization:** Streamlined visa and documentation support.
+                            </li>
+                        </ul>
+                        <a href="#" class="mt-8 inline-block text-blue-700 font-semibold hover:text-teal-600 transition duration-150">
+                            Read Our Full Story →
+                        </a>
+                    </div>
+                    <!-- Image Placeholder -->
+                    <div class="shadow-2xl rounded-xl overflow-hidden">
+                        <img src="https://placehold.co/600x400/1E3A8A/ffffff?text=Our+Professional+Team" alt="Image of professional team" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Services Section -->
+        <section id="services" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="text-sm font-semibold uppercase text-blue-600">What We Offer</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12 mt-2">
+                    Comprehensive Manpower Services
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border-t-4 border-teal-500">
+                        <div class="text-4xl text-teal-500 mb-4">⚙️</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Overseas Manpower Recruitment</h3>
+                        <p class="text-gray-600">End-to-end global sourcing, selection, and placement of high-caliber personnel for your projects.</p>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border-t-4 border-blue-500">
+                        <div class="text-4xl text-blue-500 mb-4">👷</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Skilled & Unskilled Workers</h3>
+                        <p class="text-gray-600">Supplying qualified workers for construction, manufacturing, and operational roles at scale.</p>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border-t-4 border-teal-500">
+                        <div class="text-4xl text-teal-500 mb-4">📄</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Consultancy & Documentation</h3>
+                        <p class="text-gray-600">Expert guidance on visa processing, legal compliance, foreign worker documentation, and mobilization.</p>
+                    </div>
+
+                    <!-- Service Card 4 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border-t-4 border-blue-500">
+                        <div class="text-4xl text-blue-500 mb-4">🧑‍💼</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">HR Solutions & Training</h3>
+                        <p class="text-gray-600">Pre-departure orientation, cultural training, and integrated HR support for newly hired talent.</p>
+                    </div>
+                </div>
+
+                <a href="#contact" class="mt-12 inline-block bg-blue-700 hover:bg-blue-800 btn-primary text-base">Request a Staffing Quote</a>
+            </div>
+        </section>
+
+        <!-- 5. Industries We Serve -->
+        <section id="industries" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="text-sm font-semibold uppercase text-teal-600">Sectors of Expertise</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12 mt-2">
+                    We Recruit for Leading Global Industries
+                </h2>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-6">
+                    <!-- Industry Card 1 -->
+                    <div class="p-4 rounded-lg hover:bg-gray-100 transition duration-200">
+                        <div class="text-5xl mb-2">🏗️</div>
+                        <p class="text-lg font-semibold text-gray-700">Construction</p>
+                    </div>
+                    <!-- Industry Card 2 -->
+                    <div class="p-4 rounded-lg hover:bg-gray-100 transition duration-200">
+                        <div class="text-5xl mb-2">⛽</div>
+                        <p class="text-lg font-semibold text-gray-700">Oil & Gas</p>
+                    </div>
+                    <!-- Industry Card 3 -->
+                    <div class="p-4 rounded-lg hover:bg-gray-100 transition duration-200">
+                        <div class="text-5xl mb-2">🛎️</div>
+                        <p class="text-lg font-semibold text-gray-700">Hospitality</p>
+                    </div>
+                    <!-- Industry Card 4 -->
+                    <div class="p-4 rounded-lg hover:bg-gray-100 transition duration-200">
+                        <div class="text-5xl mb-2">⚕️</div>
+                        <p class="text-lg font-semibold text-gray-700">Healthcare</p>
+                    </div>
+                    <!-- Industry Card 5 -->
+                    <div class="p-4 rounded-lg hover:bg-gray-100 transition duration-200">
+                        <div class="text-5xl mb-2">📐</div>
+                        <p class="text-lg font-semibold text-gray-700">Engineering</p>
+                    </div>
+                    <!-- Industry Card 6 -->
+                    <div class="p-4 rounded-lg hover:bg-gray-100 transition duration-200">
+                        <div class="text-5xl mb-2">🏭</div>
+                        <p class="text-lg font-semibold text-gray-700">Manufacturing</p>
+                    </div>
+                    <!-- Industry Card 7 -->
+                    <div class="p-4 rounded-lg hover:bg-gray-100 transition duration-200">
+                        <div class="text-5xl mb-2">💻</div>
+                        <p class="text-lg font-semibold text-gray-700">Technology (IT)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Why Choose Us? (Highlight Strengths) -->
+        <section id="pillars" class="py-16 md:py-24 bg-blue-900 text-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="text-sm font-semibold uppercase text-teal-400">Our Advantage</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 mt-2">
+                    The Global Craft Manpower Difference
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Pillar 1 -->
+                    <div class="p-6 bg-blue-800 rounded-xl shadow-lg">
+                        <div class="text-5xl text-teal-400 mb-4">🏆</div>
+                        <h3 class="text-xl font-bold mb-3">Experienced Recruiters</h3>
+                        <p class="text-gray-300">Decades of combined experience placing talent across complex international markets.</p>
+                    </div>
+                    <!-- Pillar 2 -->
+                    <div class="p-6 bg-blue-800 rounded-xl shadow-lg">
+                        <div class="text-5xl text-teal-400 mb-4">✅</div>
+                        <h3 class="text-xl font-bold mb-3">Verified Workforce</h3>
+                        <p class="text-gray-300">Multi-stage vetting, background checks, and skill testing guarantee reliability.</p>
+                    </div>
+                    <!-- Pillar 3 -->
+                    <div class="p-6 bg-blue-800 rounded-xl shadow-lg">
+                        <div class="text-5xl text-teal-400 mb-4">⏱️</div>
+                        <h3 class="text-xl font-bold mb-3">Fast Processing</h3>
+                        <p class="text-gray-300">Streamlined digital documentation and compliance ensure quick talent mobilization.</p>
+                    </div>
+                    <!-- Pillar 4 -->
+                    <div class="p-6 bg-blue-800 rounded-xl shadow-lg">
+                        <div class="text-5xl text-teal-400 mb-4">🌐</div>
+                        <h3 class="text-xl font-bold mb-3">Global Reach</h3>
+                        <p class="text-gray-300">Access to a vast, multi-national pool of candidates for any overseas location.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Testimonials/Clients Section -->
+        <section id="testimonials" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="text-sm font-semibold uppercase text-blue-600">Client Success</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12 mt-2">
+                    Trusted by Global Leaders
+                </h2>
+
+                <!-- Client Logos Placeholder -->
+                <div class="flex flex-wrap justify-center items-center gap-8 mb-16 opacity-75">
+                    <img src="https://placehold.co/120x60/f0f0f0/333?text=Client+A" alt="Client Logo A" class="h-10 md:h-12 w-auto">
+                    <img src="https://placehold.co/120x60/f0f0f0/333?text=Client+B" alt="Client Logo B" class="h-10 md:h-12 w-auto">
+                    <img src="https://placehold.co/120x60/f0f0f0/333?text=Client+C" alt="Client Logo C" class="h-10 md:h-12 w-auto">
+                    <img src="https://placehold.co/120x60/f0f0f0/333?text=Client+D" alt="Client Logo D" class="h-10 md:h-12 w-auto">
+                </div>
+
+                <!-- Testimonial Quotes Grid -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-md text-left border-l-4 border-teal-500">
+                        <p class="text-xl italic text-gray-700 mb-4">"The quality of the engineers provided was exceptional. Global Craft Manpower dramatically reduced our time-to-hire in the Middle East."</p>
+                        <p class="font-semibold text-gray-800">- Jane Doe, HR Director, Global Energy Co.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-md text-left border-l-4 border-blue-500">
+                        <p class="text-xl italic text-gray-700 mb-4">"I secured my job and visa faster than I expected. The entire process was professional and transparent, providing peace of mind."</p>
+                        <p class="font-semibold text-gray-800">- Ali Khan, Skilled Mechanic, Candidate</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Call-to-Action Banner (Final CTA) -->
+        <section class="py-20 bg-teal-500 text-white shadow-inner" style="background-image: url('https://placehold.co/1920x400/2DD4BF/ffffff?text=Work+Overseas'); background-size: cover; background-position: center;">
+            <div class="bg-teal-700 bg-opacity-80 absolute inset-0"></div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+                    Ready to Scale Your Workforce or Find Your Dream Job?
+                </h2>
+                <p class="text-xl mb-10">
+                    We connect ambition with opportunity, globally.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#contact" class="bg-white text-teal-600 hover:bg-gray
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Contact Section -->
+        <section id="contact" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-2xl">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-3">Get In Touch</h3>
+                        <p class="text-gray-600 mb-6">Tell us about your requirements (Employer) or inquiry (Candidate).</p>
+                        
+                        <form action="#" method="POST" class="space-y-4">
+                            <div>
+                                <label for="type" class="block text-sm font-medium text-gray-700 mb-1">I am a...</label>
+                                <select id="type" name="type" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500">
+                                    <option>Corporate Client (Employer)</option>
+                                    <option>Job Seeker (Candidate)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                                <input type="text" id="name" name="name" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" name="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message / Requirements</label>
+                                <textarea id="message" name="message" rows="4" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 btn-primary py-3">
+                                Send Inquiry
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Office Info & Map -->
+                    <div>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-3">Our Global Office</h3>
+                        <div class="space-y-6 text-gray-700">
+                            <p class="flex items-start">
+                                <span class="text-teal-500 mr-3 mt-1">📍</span>
+                                **Headquarters:** Global Trade Center, 14th Floor, City Square, Global Hub 90001
+                            </p>
+                            <p class="flex items-center">
+                                <span class="text-teal-500 mr-3">📞</span>
+                                **Call:** +1 (555) 123-4567
+                            </p>
+                            <p class="flex items-center">
+                                <span class="text-teal-500 mr-3">📧</span>
+                                **Email:** info@globalcraftmanpower.com
+                            </p>
+                            <a href="https://wa.me/1234567890" target="_blank" class="flex items-center text-green-600 hover:text-green-700 font-semibold transition duration-150">
+                                <span class="text-2xl mr-3">💬</span>
+                                WhatsApp Chat Now
+                            </a>
+                        </div>
+                        
+                        <!-- Map Placeholder -->
+                        <div class="mt-8 h-64 bg-gray-200 rounded-xl overflow-hidden shadow-inner">
+                           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3357.77813710017!2d74.8933811!3d32.6919448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391e9de71136bc6f%3A0xb9c08415a5362d9a!2sGlobalcraft%20Manpower%20Services!5e0!3m2!1sen!2skr!4v1759402333271!5m2!1sen!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 10. Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+            
+            <!-- Company Info -->
+            <div>
+                <h4 class="text-xl font-bold text-teal-400 mb-4">GlobalCraft</h4>
+                <p class="text-gray-400 text-sm">Empowering global recruitment with integrity and excellence.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4 border-b border-gray-700 pb-2">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#home" class="text-gray-400 hover:text-teal-400 transition">Home</a></li>
+                    <li><a href="#about" class="text-gray-400 hover:text-teal-400 transition">About Us</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-teal-400 transition">Services</a></li>
+                    <li><a href="#contact" class="text-gray-400 hover:text-teal-400 transition">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Candidate Zone -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4 border-b border-gray-700 pb-2">For Candidates</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#jobs" class="text-gray-400 hover:text-teal-400 transition">View Jobs</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-teal-400 transition">Application Tracking</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-teal-400 transition">Resources & Safety</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media & Contact -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4 border-b border-gray-700 pb-2">Connect</h4>
+                <div class="flex space-x-4 text-2xl">
+                    <!-- Social Media Icons (Placeholders) -->
+                    <a href="#" class="text-gray-400 hover:text-blue-500 transition duration-150" aria-label="LinkedIn">🔗</a>
+                    <a href="#" class="text-gray-400 hover:text-blue-600 transition duration-150" aria-label="Facebook">📘</a>
+                    <a href="#" class="text-gray-400 hover:text-pink-500 transition duration-150" aria-label="Instagram">📸</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-500">
+            &copy; 2025 Global Craft Manpower. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for Mobile Menu Toggle and Smooth Scrolling
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIconOpen = document.getElementById('menu-icon-open');
+            const menuIconClose = document.getElementById('menu-icon-close');
+
+            // 1. Mobile Menu Logic
+            menuButton.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                menuIconOpen.classList.toggle('hidden', !isHidden);
+                menuIconClose.classList.toggle('hidden', isHidden);
+            });
+
+            // 2. Close mobile menu when a link is clicked
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIconOpen.classList.remove('hidden');
+                    menuIconClose.classList.add('hidden');
+                });
+            });
+
+            // 3. Simple Scroll Spy (optional, for active nav state)
+            const sections = document.querySelectorAll('main section');
+            const navLinks = document.querySelectorAll('header nav a');
+
+            window.onscroll = () => {
+                let current = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    if (scrollY >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(a => {
+                    a.classList.remove('text-blue-900', 'font-semibold');
+                    a.classList.add('text-gray-600');
+                    if (a.getAttribute('href').includes(current)) {
+                        a.classList.add('text-blue-900', 'font-semibold');
+                        a.classList.remove('text-gray-600');
+                    }
+                });
+            };
+        });
+    </script>
+</body>
+</html>
